@@ -75,6 +75,6 @@ async function searchManga(name) {
     // console.log(elements.rows.item(0).cells.item(1).childNodes.item(0).textContent)
 }
 
-searchManga("One piece")
+// searchManga("One piece")
 
-// module.exports = searchManga;
+module.exports = searchManga;
