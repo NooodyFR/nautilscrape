@@ -69,16 +69,19 @@ async function getMangaById(id) {
     
         result.name = document.querySelector("#content > div.frame_left > div.frame_left_top > h1 > span").textContent
         result.scenario = document.querySelector("#onglets_1_information > div:nth-child(2) > div > div.description").textContent
-        result.note = document.querySelector("#moy_note_11 > div > span.moy_note.OpenSansCondensed").textContent
+        try {
+            result.note = document.querySelector("#moy_note_11 > div > span.moy_note.OpenSansCondensed").textContent
+        } catch {}
     
         // console.log(result)
         return result
     
     } catch (e) {
+        console.log(e)
         return false;
     }
 
 }
 
 module.exports = getMangaById
-// getMangaById("one+piece dsdad")
+// getMangaById("neon+genesis+evangelion")
