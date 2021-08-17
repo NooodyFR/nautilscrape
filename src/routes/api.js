@@ -17,4 +17,15 @@ router.all('/search/manga/:name', async (req, res) => {
 
 })
 
+router.all('/manga/:id', async (req, res) => {
+
+    let results = await require('../functions/getMangaById')(req.params.id);
+    if (results === false) {
+        res.json({"error": "404"})
+    } else {
+        res.json(results)
+    }
+
+})
+
 module.exports = router;

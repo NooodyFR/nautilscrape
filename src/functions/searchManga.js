@@ -1,7 +1,6 @@
 const axios = require('axios').default;
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
-const fs = require('fs')
 
 async function searchManga(name) {
 
