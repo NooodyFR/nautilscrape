@@ -1,0 +1,27 @@
+{
+  "name": "nautilscrape",
+  "version": "1.0.0",
+  "description": "nautilscrape - A Nautiljon Scraper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NooodyFR/nautilscrape.git"
+  },
+  "author": "NooodyFR & tawagot0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NooodyFR/nautilscrape/issues"
+  },
+  "homepage": "https://github.com/NooodyFR/nautilscrape#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  },
+  "engines": {
+    "node": "15.x"
+  }
+}
