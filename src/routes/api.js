@@ -10,4 +10,11 @@ router.all('/', async (req, res) => {
 
 })
 
+router.all('/search/manga/:name', async (req, res) => {
+
+    let results = await require('../functions/searchManga')(req.params.name);
+    res.json(results)
+
+})
+
 module.exports = router;
