@@ -24,12 +24,36 @@ async function searchManga(name) {
             alt_name: "",
             scenario: "",
             link: "",
-            id: ""
+            id: "",
+            type: "",
+            volumesvo: "N/A",
+            volumesvf: "N/A",
+            age: "N/A",
+            datevo: "N/A",
+            datevf: "N/A",
+            note: "N/A"
         }
 
         current.name = element.cells.item(1).childNodes.item(1).textContent
         current.link = `https://www.nautiljon.com${element.cells.item(1).childNodes.item(1).href}`
         current.id = element.cells.item(1).childNodes.item(1).href.replace("/mangas/", "").replace(".html", "")
+        current.type = element.cells.item(2).childNodes.item(0).textContent
+        current.volumesvo = element.cells.item(3).childNodes.item(0).textContent
+        current.volumesvf = element.cells.item(4).childNodes.item(0).textContent
+        if (element.cells.item(5).childNodes.item(0)) {
+            current.age = element.cells.item(5).childNodes.item(0).textContent.replace(" ans et +", "")
+        }
+        if (element.cells.item(6).childNodes.item(0)) {
+            if (element.cells.item(6).childNodes.item(0).textContent !== "-") {
+            current.datevf = element.cells.item(6).childNodes.item(0).textContent
+            }
+        }
+        if (element.cells.item(7).childNodes.item(0)) {
+            current.datevo = element.cells.item(7).childNodes.item(0).textContent
+        }
+        if (element.cells.item(8).childNodes.item(0)) {
+            current.note = element.cells.item(8).childNodes.item(0).textContent
+        }
         // let name = element.cells.item(1).childNodes.item(1).textContent
         // let alt_name = element.cells.item(1).childNodes.item(3).class
         element.cells.item(1).childNodes.forEach(o => {
@@ -51,6 +75,6 @@ async function searchManga(name) {
     // console.log(elements.rows.item(0).cells.item(1).childNodes.item(0).textContent)
 }
 
-// searchManga("One piece")
+searchManga("One piece")
 
-module.exports = searchManga;
+// module.exports = searchManga;
