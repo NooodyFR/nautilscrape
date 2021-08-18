@@ -48,7 +48,11 @@ async function getMangaById(id) {
                 result.themes = o.textContent.replace("Thèmes :  ", "").split(" - ")
             }
             if (o.textContent.includes("Auteur")) {
-                result.author = o.textContent.replace("Auteur :  ", "")
+                if (o.textContent.includes("Auteur Original")) {
+                    result.author = o.textContent.replace("Auteur Original :  ", "")
+                } else {
+                    result.author = o.textContent.replace("Auteur :  ", "")
+                }
             }
             if (o.textContent.includes("Éditeur VO")) {
                 result.editor = o.textContent.replace("Éditeur VO :  ", "")
