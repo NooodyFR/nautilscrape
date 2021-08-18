@@ -56,10 +56,10 @@ async function getMangaById(id) {
                 }
             }
             if (o.textContent.includes("Éditeur VO")) {
-                result.editor = o.textContent.replace("Éditeur VO :  ", "").split("(")[0]
+                result.editor = o.textContent.replace("Éditeur VO :  ", "").split(" (")[0]
             }
             if (o.textContent.includes("Éditeur VF")) {
-                result.editor = o.textContent.replace("Éditeur VF :  ", "")
+                result.editor = o.textContent.replace("Éditeur VF :  ", "").split(" (")[0]
             }
             if (o.textContent.includes("Nb volumes VO")) {
                 result.volumesvo = o.textContent.replace("Nb volumes VO :  ", "").split(" (")[0]
