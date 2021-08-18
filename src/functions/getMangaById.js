@@ -26,7 +26,8 @@ async function getMangaById(id) {
             volumesvf: "",
             age: "",
             scenario: "",
-            note: ""
+            note: "",
+            status: ""
         }
     
     
@@ -61,10 +62,11 @@ async function getMangaById(id) {
                 result.editor = o.textContent.replace("Éditeur VF :  ", "")
             }
             if (o.textContent.includes("Nb volumes VO")) {
-                result.volumesvo = o.textContent.replace("Nb volumes VO :  ", "")
+                result.volumesvo = o.textContent.replace("Nb volumes VO :  ", "").split("(")[0]
             }
             if (o.textContent.includes("Nb volumes VF")) {
-                result.volumesvf = o.textContent.replace("Nb volumes VF :  ", "")
+                result.volumesvf = o.textContent.replace("Nb volumes VF :  ", "").split("(")[0]
+                result.status = o.textContent.split("(").pop().split(")")[0];
             }
             if (o.textContent.includes("Âge conseillé")) {
                 result.age = o.textContent.replace(" ans et +", "").replace("Âge conseillé :  ", "")
