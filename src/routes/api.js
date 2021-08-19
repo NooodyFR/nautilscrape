@@ -28,4 +28,13 @@ router.all('/manga/:id', async (req, res) => {
 
 })
 
+router.all('/manga/book/:id/:num', async (req, res) => {
+
+
+    let results = await require('../functions/getBooksById')(req.params.id, req.params.num);
+
+    res.json(results)
+
+}) 
+
 module.exports = router;
